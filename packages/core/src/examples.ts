@@ -25,9 +25,9 @@ export const WORKED_EXAMPLES: WorkedExample[] = [
     pillarId: 1,
     pillarName: 'Resonance Dynamics',
     reading:
-      'Oversight becomes the act of measurement in a participatory system: an ' +
-      'observer interacting with a target and collapsing uncertainty into a ' +
-      'recorded observation — the mechanism by which attention shapes what is seen.',
+      'Oversight as measurement discipline: define what is being observed, with what ' +
+      'instrument, and how the act of observing alters the reading. The observer effect ' +
+      'stated as a procedural check — account for the instrument before trusting the data.',
   },
   {
     axiomId: 1,
@@ -36,9 +36,10 @@ export const WORKED_EXAMPLES: WorkedExample[] = [
     pillarId: 5,
     pillarName: 'Cognitive Framing',
     reading:
-      'Oversight becomes the cognitive function of focused attention: the spotlight ' +
-      'of awareness selecting specific memories for active processing — the ' +
-      'gatekeeper deciding which data enters the synthesis engine of the mind.',
+      'Oversight as an attention audit: which information is being selected for ' +
+      'processing, by what criteria, and what is being filtered out. The selection ' +
+      'criteria themselves become the object of inspection — who chose them, and ' +
+      'what do they exclude by design.',
   },
   {
     axiomId: 1,
@@ -47,8 +48,8 @@ export const WORKED_EXAMPLES: WorkedExample[] = [
     pillarId: 12,
     pillarName: 'Safeguards & Drift Detection',
     reading:
-      'Oversight becomes a persistent background process maintaining awareness of ' +
-      'system integrity — monitoring for drift or degradation, and triggering ' +
-      'corrective action before a critical failure occurs.',
+      'Oversight as a monitoring function: integrity metrics defined in advance, ' +
+      'sampled on a schedule, with thresholds that trigger corrective action. The ' +
+      'question is always what the metrics miss — no dashboard watches itself.',
   },
 ];

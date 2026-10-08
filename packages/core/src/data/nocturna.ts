@@ -3,8 +3,9 @@
  *
  * Source: "The Alexandria Codex — Symbolic System Specification" (Document A),
  * Part IV. Each shadow is the inverse of the corresponding base axiom
- * (shadow N mirrors axiom N). Names and "Art of ..." domains preserved from
- * the source.
+ * (shadow N mirrors axiom N). Plain-language names are primary; "Art of ..."
+ * domains are normalized into plain language (verbatim originals preserved in
+ * git history).
  *
  * Provenance notes: the source's own table was garbled in places. Entries
  * marked `reconstructed` had names pieced together from fragment lines;
@@ -84,14 +85,14 @@ export const SHADOWS: Shadow[] = [
   S(48, 'The Unwinnable War', 'Attrition Trap', 'The Art of Destructive Conflict and Irreconcilable Hate'),
   S(49, 'The Deceptive Calm', 'False Calm', 'The Art of Complacency and False Harmonies'),
   S(50, 'The Dissonant Chord', 'Unstable Alliance', 'The Art of Three-Way Conflicts and Unstable Harmony', 'reconstructed'),
-  S(51, 'The Call to Ruin', 'Dangerous Mobilization', 'The Art of Dangerous Summons and Cursed Invocations'),
+  S(51, 'The Call to Ruin', 'Dangerous Mobilization', 'The Art of Dangerous Mobilization and Compromised Calls to Action'),
   S(52, 'The Funhouse Mirror', 'Distorted Self-Image', 'The Art of Distorted Reflections and False Selves'),
   S(53, 'The Conspiracy of Whispers', 'Whisper Campaign', 'The Art of Layered Deception', 'reconstructed'),
   S(54, 'The War Without End', 'Perpetual Conflict', 'The Art of Endless Conflict and Viral Expansion', 'reconstructed'),
   S(55, 'The Folie \u00e0 Deux', 'Mutual Delusion', 'The Art of Shared Madness and Destructive Partnership', 'reconstructed'),
   S(56, 'The Corruption', 'Corruption', 'The Art of Decay and Malevolent Transmutation'),
   S(57, 'The Perfect Prison', 'Total Containment', 'The Art of Flawless Traps and Final Stasis'),
-  S(58, 'The Soul Prison', 'Identity Capture', 'The Art of the Beautiful Trap and Enlightened Deception', 'reconstructed'),
+  S(58, 'The Soul Prison', 'Identity Capture', 'The Art of the Beautiful Trap and Sophisticated Deception', 'reconstructed'),
   S(59, 'The False Aura', 'False Legitimacy', 'The Art of Deceptive Radiance and Hidden Corruption'),
   S(60, 'The Heart of the Void', 'Hollow Center', 'The Art of the Devouring Center', 'reconstructed'),
   S(61, 'The Beautiful Trap', 'Gilded Trap', 'The Art of the Gilded Cage and Endless Loops'),
@@ -103,8 +104,8 @@ export const SHADOWS: Shadow[] = [
   S(67, 'The Perfect Illusion', 'Total Simulation', 'The Art of the Flawless Simulation and the Gilded Cage', 'reconstructed'),
   S(68, 'The Great Unmaking', 'Deliberate Destruction', 'The Art of Annihilation and Violent Dissolution'),
   S(69, 'The Eternal Prison', 'Permanent Lock-in', 'The Art of Inescapable Loops and Perfected Traps'),
-  S(70, 'The Dark Fate', 'Fatal Trajectory', 'The Art of Doomed Destinies and Paths to Ruin'),
-  S(71, 'The Haunting', 'Inescapable Past', 'The Art of the Inescapable Past and Cursed Cycles'),
+  S(70, 'The Dark Fate', 'Fatal Trajectory', 'The Art of Engineered Decline and Paths to Ruin'),
+  S(71, 'The Haunting', 'Inescapable Past', 'The Art of the Inescapable Past and Self-Reinforcing Cycles'),
   S(72, 'The Ultimate Annihilation', 'Terminal Destruction', 'The Art of the Final Death', 'reconstructed'),
 ];
 

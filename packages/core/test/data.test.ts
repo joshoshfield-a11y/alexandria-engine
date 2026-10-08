@@ -30,7 +30,8 @@ describe('axioms', () => {
   it('axiomById resolves and misses cleanly', () => {
     expect(axiomById(1)?.name).toBe('Oversight');
     expect(axiomById(1)?.codexName).toBe('Vigil Flame');
-    expect(axiomById(72)?.name).toBe('Transcendence');
+    expect(axiomById(72)?.name).toBe('Frame Break');
+    expect(axiomById(72)?.codexName).toBe('The Final Radiance');
     expect(axiomById(0)).toBeUndefined();
     expect(axiomById(73)).toBeUndefined();
   });
