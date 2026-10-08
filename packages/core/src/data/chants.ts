@@ -1,5 +1,9 @@
 /**
- * The 21 Resonance-Chant Directives — sonic/vocalized activation keys.
+ * ARCHIVAL — the 21 chants (source: Resonance-Chant Directives).
+ *
+ * The chants are source flavor, not engine components. They are preserved
+ * here for provenance but are not part of the analytical machinery and are
+ * not surfaced by the app.
  *
  * Source: "The Alexandria Codex — Symbolic System Specification" (Document A),
  * Part D. Chant, glyphs, and function preserved verbatim.

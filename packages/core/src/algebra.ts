@@ -60,7 +60,7 @@ export function parseCompound(s: string): CompoundGlyph {
   return { glyphs, polarity, ...(domain ? { domain } : {}) };
 }
 
-/** The Nocturna mirror: every axiom's inverse (shadow) operator. */
+/** The failure-mode mirror: every operator's inverse (shadow) operator. */
 export function invertAxiom(axiom: Axiom): Shadow | undefined {
   return shadowByAxiomId(axiom.id);
 }

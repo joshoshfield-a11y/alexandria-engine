@@ -2,9 +2,9 @@
  * Worked examples — a deep lens reading, shown step by step.
  *
  * Source: "The Alexandria Codex — Symbolic System Specification" (Document A),
- * §2.2, which demonstrates the 13×72 method by reading Vigil Flame (⊙)
- * through three pillars. Preserved here as the canonical example of what a
- * full reading looks like, so new users can see the method before running it.
+ * §2.2, which demonstrates the 13×72 method by reading one operator through
+ * three frames. Preserved here as the canonical example of what a full reading
+ * looks like, so new users can see the method before running it.
  */
 
 export interface WorkedExample {
@@ -13,45 +13,42 @@ export interface WorkedExample {
   axiomGlyph: string;
   pillarId: number;
   pillarName: string;
-  /** The source's reading, condensed. */
+  /** The source's reading, condensed into plain language. */
   reading: string;
 }
 
 export const WORKED_EXAMPLES: WorkedExample[] = [
   {
     axiomId: 1,
-    axiomName: 'Vigil Flame',
+    axiomName: 'Oversight',
     axiomGlyph: '⊙',
     pillarId: 1,
-    pillarName: 'Harmonic Physics',
+    pillarName: 'Resonance Dynamics',
     reading:
-      'The Vigil Flame becomes the fundamental act of measurement in a participatory ' +
-      'universe: a coherent field resonance (the observer) interacting with the wave ' +
-      'function of a target system, collapsing probability into manifest observation — ' +
-      'the physical mechanism of consciousness interacting with the field.',
+      'Oversight becomes the act of measurement in a participatory system: an ' +
+      'observer interacting with a target and collapsing uncertainty into a ' +
+      'recorded observation — the mechanism by which attention shapes what is seen.',
   },
   {
     axiomId: 1,
-    axiomName: 'Vigil Flame',
+    axiomName: 'Oversight',
     axiomGlyph: '⊙',
     pillarId: 5,
-    pillarName: 'Axiomatic Neuroscience',
+    pillarName: 'Cognitive Framing',
     reading:
-      'The Vigil Flame becomes the cognitive function of focused attention: the spotlight ' +
-      'of consciousness selecting specific engram-nodes from the memory lattice for active ' +
-      'processing during the encoding state — the gatekeeper deciding which data enters ' +
-      'the synthesis engine of the mind.',
+      'Oversight becomes the cognitive function of focused attention: the spotlight ' +
+      'of awareness selecting specific memories for active processing — the ' +
+      'gatekeeper deciding which data enters the synthesis engine of the mind.',
   },
   {
     axiomId: 1,
-    axiomName: 'Vigil Flame',
+    axiomName: 'Oversight',
     axiomGlyph: '⊙',
     pillarId: 12,
-    pillarName: 'Guardian Override',
+    pillarName: 'Safeguards & Drift Detection',
     reading:
-      'The Vigil Flame becomes a persistent background process maintaining oversight of ' +
-      'system integrity — perpetually monitoring for symbolic drift or resonance decay, ' +
-      'providing the constant awareness needed to trigger a corrective override before ' +
-      'a critical failure occurs.',
+      'Oversight becomes a persistent background process maintaining awareness of ' +
+      'system integrity — monitoring for drift or degradation, and triggering ' +
+      'corrective action before a critical failure occurs.',
   },
 ];

@@ -28,8 +28,9 @@ describe('axioms', () => {
   });
 
   it('axiomById resolves and misses cleanly', () => {
-    expect(axiomById(1)?.name).toBe('Vigil Flame');
-    expect(axiomById(72)?.name).toBe('The Final Radiance');
+    expect(axiomById(1)?.name).toBe('Oversight');
+    expect(axiomById(1)?.codexName).toBe('Vigil Flame');
+    expect(axiomById(72)?.name).toBe('Transcendence');
     expect(axiomById(0)).toBeUndefined();
     expect(axiomById(73)).toBeUndefined();
   });
@@ -50,8 +51,9 @@ describe('perception pillars', () => {
   });
 
   it('pillarById resolves', () => {
-    expect(pillarById(1)?.name).toBe('Harmonic Physics');
-    expect(pillarById(13)?.name).toBe('Unified Architecture');
+    expect(pillarById(1)?.name).toBe('Resonance Dynamics');
+    expect(pillarById(1)?.codexName).toBe('Pillar of Harmonic Physics');
+    expect(pillarById(13)?.name).toBe('Systems Synthesis');
   });
 });
 
@@ -63,8 +65,9 @@ describe('nocturna', () => {
   });
 
   it('shadowByAxiomId resolves', () => {
-    expect(shadowByAxiomId(1)?.name).toBe('The Unblinking Eye');
-    expect(shadowByAxiomId(15)?.name).toBe("The Usurper's Throne");
+    expect(shadowByAxiomId(1)?.name).toBe('Covert Surveillance');
+    expect(shadowByAxiomId(1)?.codexName).toBe('The Unblinking Eye');
+    expect(shadowByAxiomId(15)?.name).toBe("Illegitimate Authority");
   });
 
   it('provenance flags are honest', () => {
@@ -72,7 +75,7 @@ describe('nocturna', () => {
     // 3 names + 1 art lost in the source text
     expect(unrecovered.length).toBe(4);
     for (const s of unrecovered) {
-      expect(s.name.includes('unrecovered') || s.art.includes('unrecovered')).toBe(true);
+      expect(s.codexName.includes('unrecovered') || s.art.includes('unrecovered')).toBe(true);
     }
   });
 });

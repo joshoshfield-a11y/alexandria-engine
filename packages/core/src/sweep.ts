@@ -9,7 +9,7 @@
  *  - `full`    — the entire 936-lens matrix (returns readings lazily in
  *                 batches; prefer the narrower strategies for interactive use)
  *
- * Every sweep also runs the Nocturna red-team over the axioms involved.
+ * Every sweep also runs the failure-mode red-team over the operators involved.
  */
 
 import {

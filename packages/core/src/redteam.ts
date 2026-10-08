@@ -1,7 +1,7 @@
 /**
- * The Nocturna red-team engine.
+ * The failure-mode red-team engine (source name: the Nocturna taxonomy).
  *
- * For a topic and a set of axioms, produce the shadow reading of each:
+ * For a topic and a set of operators, produce the failure-mode reading of each:
  * where the constructive operator has an abuse form, name it. This is the
  * Codex's red-team appendix made operational — the same role FMEA and
  * MITRE ATT&CK play in engineering: for every capability, its failure

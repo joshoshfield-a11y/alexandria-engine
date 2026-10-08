@@ -2,13 +2,13 @@
  * @alexandria/core — the formal core of the Alexandria Engine.
  *
  * A working implementation of the Alexandria Codex as a thinking instrument:
- *  - 72 primal axioms as typed operators (data/axioms.ts)
- *  - 13 perception pillars (data/pillars.ts)
+ *  - 72 analytical operators in plain language (data/axioms.ts; original Codex names kept as codexName)
+ *  - 13 analytical frames (data/pillars.ts)
  *  - the 936-lens morphological matrix + reading engine (lenses.ts)
- *  - the Nocturna shadow taxonomy as a red-team appendix (data/nocturna.ts, redteam.ts)
+ *  - the failure-mode taxonomy as a red-team appendix (data/nocturna.ts, redteam.ts)
  *  - the term algebra: composition, polarity, domains, lens application (algebra.ts)
  *  - the sweep engine: perspective sweeps on any topic (sweep.ts)
- *  - the 21 resonance chants as mnemonic data (data/chants.ts)
+ *  - the 21 chants as archival data, not engine components (data/chants.ts)
  *
  * Epistemic stance, stated once: this library implements the Codex's *formal*
  * structure — the parts that survive translation into mathematics and

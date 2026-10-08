@@ -66,14 +66,14 @@ describe('readLens', () => {
     const r = readLens(getLens(1, 1), 'my startup pricing');
     expect(r.lens.id).toBe('P01-A01');
     expect(r.question).toContain('my startup pricing');
-    expect(r.question).toContain('Vigil Flame');
-    expect(r.question).toContain('Harmonic Physics');
+    expect(r.question).toContain('Oversight');
+    expect(r.question).toContain('Resonance Dynamics');
     expect(r.move.length).toBeGreaterThan(0);
   });
 
   it('includes the Nocturna counter-probe', () => {
     const r = readLens(getLens(1, 1), 'my startup pricing');
-    expect(r.shadowName).toBe('The Unblinking Eye');
+    expect(r.shadowName).toBe('Covert Surveillance');
     expect(r.counter).toContain('my startup pricing');
   });
 
@@ -98,7 +98,7 @@ describe('readLens', () => {
 describe('counterProbe', () => {
   it('derives the probe from the shadow art', () => {
     const c = counterProbe(1, 'the launch');
-    expect(c.name).toBe('The Unblinking Eye');
+    expect(c.name).toBe('Covert Surveillance');
     expect(c.probe).toContain('hidden awareness and surveillance');
     expect(c.probe).toContain('the launch');
   });

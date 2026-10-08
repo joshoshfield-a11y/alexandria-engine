@@ -1,6 +1,6 @@
 {
   "name": "@alexandria/core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Formal core of the Alexandria Engine: 72-axiom ontology, 13x72 lens matrix, Nocturna red-team taxonomy, sweep engine.",
   "type": "module",
   "main": "./dist/index.js",

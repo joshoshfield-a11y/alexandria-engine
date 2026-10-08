@@ -8,7 +8,7 @@
  * A lens reading composes three things:
  *   1. a pillar *move* (an analytical operation),
  *   2. an axiom *interrogative* (the question the axiom asks),
- *   3. the Nocturna *counter-probe* (the shadow reading of the same ground).
+ *   3. the *counter-probe* — the failure-mode reading of the same ground.
  *
  * Readings are deterministic and inspectable: the same (lens, topic) always
  * yields the same reading. Nothing here claims metaphysical efficacy — the
@@ -101,7 +101,7 @@ export interface LensReading {
   question: string;
   shadowName: string;
   shadowArt: string;
-  /** The Nocturna counter-probe for the topic. */
+  /** The failure-mode counter-probe for the topic. */
   counter: string;
 }
 
@@ -125,7 +125,7 @@ export function counterProbe(axiomId: number, topic: string): { name: string; ar
 
 /**
  * Read one lens against a topic: pillar move + axiom interrogative,
- * plus the Nocturna counter-probe. `moveIndex` selects which of the
+ * plus the failure-mode counter-probe. `moveIndex` selects which of the
  * pillar's moves to apply (default 0).
  */
 export function readLens(lens: Lens, topic: string, moveIndex = 0): LensReading {

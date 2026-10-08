@@ -45,7 +45,7 @@ describe('export', () => {
     expect(md).toContain('# Alexandria Engine — Sweep');
     expect(md).toContain('the novel');
     expect(md).toContain('my take on this');
-    expect(md).toContain('# Red Team — Nocturna');
+    expect(md).toContain('# Red Team — Failure Modes');
     expect(md).toContain('Shadow check');
   });
 
@@ -59,7 +59,7 @@ describe('export', () => {
 });
 
 describe('worked examples', () => {
-  it('holds the three canonical Vigil Flame readings', () => {
+  it('holds the three canonical Oversight readings', () => {
     expect(WORKED_EXAMPLES).toHaveLength(3);
     expect(WORKED_EXAMPLES.every((e) => e.axiomId === 1)).toBe(true);
     expect(WORKED_EXAMPLES.map((e) => e.pillarId)).toEqual([1, 5, 12]);

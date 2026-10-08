@@ -53,7 +53,7 @@ describe('redTeam', () => {
     expect(rs).toHaveLength(72);
     expect(rs[0].axiom.id).toBe(1);
     expect(rs[71].axiom.id).toBe(72);
-    expect(rs[0].shadow.name).toBe('The Unblinking Eye');
+    expect(rs[0].shadow.name).toBe('Covert Surveillance');
   });
 
   it('accepts a subset of axioms', () => {

@@ -39,8 +39,8 @@ describe('algebra', () => {
 
   it('invertAxiom returns the Nocturna mirror', () => {
     const axiom = axiomById(1)!;
-    expect(invertAxiom(axiom)?.name).toBe('The Unblinking Eye');
-    expect(invertAxiom(axiomById(72)!)?.name).toBe('The Ultimate Annihilation');
+    expect(invertAxiom(axiom)?.name).toBe('Covert Surveillance');
+    expect(invertAxiom(axiomById(72)!)?.name).toBe('Terminal Destruction');
   });
 
   it('applyLens formats lens application', () => {

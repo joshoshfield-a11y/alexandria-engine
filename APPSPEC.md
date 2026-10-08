@@ -37,3 +37,34 @@ Present the Engine as a **thinking instrument** — structured
 perspective-taking and red-teaming. No metaphysical claims, no "calibration"
 or "activation" language. The engine is deterministic: same inputs give the
 same outputs — say so in the UI.
+
+## Grounded register (core 0.3.0)
+
+All user-facing names are plain language. The mythic Codex names survive only
+as `codexName` fields (provenance), never as primary labels. UI rules:
+- Operators, frames, and failure modes display their plain `name`, never the
+  Codex name. No "Vigil Flame" / "Nocturna" / "Grimoire" in the chrome.
+- The red-team section is labeled "Red Team" or "Failure Modes", never
+  "Nocturna".
+- The 21 chants are archival data, not engine components — do not surface them
+  in the UI.
+- Glyphs may appear as compact symbols next to the plain name, but the plain
+  name is always the primary identity.
+- Keep the existing honesty: deterministic engine, questions not revelations.
+
+## v0.2 additions (core 0.2.0 — already in packages/core)
+
+- **Positional spreads** (`spreads.ts`): `SPREADS` = Triad (3: Root/Force/Outcome),
+  Cross (5: Situation/Challenge/Root/Guidance/Outcome), Council (7:
+  Heart/Head/Hand/Shadow/Ally/Obstacle/Horizon). `runSpread(topic, spreadId,
+  seed?, moveIndex?)` → `{topic, spread, seed, readings: PositionalReading[]
+  (each with `position: {name, brief}`), redTeam}`. Add a spread picker to the
+  Sweep Runner alongside the existing strategies.
+- **Session export** (`export.ts`): `sweepToMarkdown(result, notes?)` and
+  `spreadToMarkdown(result, notes?)` render a full session (readings, shadow
+  counters, user notes, red-team) as Markdown. Add an Export button on saved
+  sessions producing a downloadable/copyable .md.
+- **Worked examples** (`examples.ts`): `WORKED_EXAMPLES` — the three canonical
+  Vigil Flame readings (Harmonic Physics / Axiomatic Neuroscience / Guardian
+  Override) from the source spec §2.2. Add a "See a worked example" entry point
+  that walks through one before the user's first sweep.

@@ -7,11 +7,11 @@ not a metaphysical claim.
 
 The Codex's honest core, rebuilt as software:
 
-- **72 primal axioms** as typed operators, each carrying the question it asks
+- **72 analytical operators** in plain language (original Codex names kept as `codexName` for provenance), each carrying the question it asks
 - **13 perception pillars**, each with analytical moves it performs
 - **The 936-lens matrix** — every pillar × every axiom, a morphological matrix
   (the same method family as Zwicky morphological analysis and TRIZ)
-- **The Nocturna** as a red-team appendix: every constructive operator paired
+- **A 72-entry failure-mode taxonomy** as a red-team appendix: every constructive operator paired
   with its abuse form (the FMEA / MITRE ATT&CK role)
 - **A term algebra**: glyph composition, polarity (+/−), domain modifiers (°/•),
   lens application L(g)
@@ -21,7 +21,7 @@ The Codex's honest core, rebuilt as software:
 `runSweep({topic, strategy})` runs a perspective sweep on any topic: a spread
 of lenses, a full pillar sweep (72 lenses), or a single-axiom sweep (13 lenses).
 Each lens produces a composed analytical question — pillar move + axiom
-interrogative — plus the Nocturna counter-probe for the same ground. Every
+interrogative — plus the failure-mode counter-probe for the same ground. Every
 sweep also runs the red-team over the axioms involved.
 
 The engine is deterministic: same inputs, same outputs. A lens reading is a
