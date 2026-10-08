@@ -105,11 +105,13 @@ export interface LensReading {
   counter: string;
 }
 
-/** Strip "The Art of " and lowercase: "hidden awareness and surveillance". */
+/** Lowercase the art domain: "hidden awareness and surveillance". */
 export function artNoun(art: string): string | null {
   const m = /^The Art of (.+)$/.exec(art);
-  if (!m) return null;
-  return m[1].toLowerCase();
+  if (m) return m[1].toLowerCase();
+  const t = art.trim();
+  if (!t || /^\[.*\]$/.test(t)) return null;
+  return t.toLowerCase();
 }
 
 /** Compose the shadow counter-probe for a topic. */
