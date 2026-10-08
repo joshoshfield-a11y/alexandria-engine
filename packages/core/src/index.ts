@@ -23,4 +23,7 @@ export * from './data/chants.js';
 export * from './algebra.js';
 export * from './lenses.js';
 export * from './sweep.js';
+export * from './spreads.js';
+export * from './export.js';
+export * from './examples.js';
 export * from './redteam.js';
