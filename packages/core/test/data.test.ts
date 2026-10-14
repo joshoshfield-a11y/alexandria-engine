@@ -74,9 +74,11 @@ describe('axioms', () => {
       expect(['ANCHOR', 'DEFINE-proposed', 'SYMBOLIC-ONLY']).toContain(a.verdict);
       expect(a.groundedSource.length).toBeGreaterThan(10);
     }
-    // spot checks from the grounding pass
+    // spot checks from the grounding pass (engine ids are Codex source order;
+    // canon idx 71 Choral Closure = engine id 54, canon idx 68 Returns = engine id 71)
     expect(axiomById(1)?.verdict).toBe('DEFINE-proposed');
-    expect(axiomById(71)?.verdict).toBe('SYMBOLIC-ONLY');
+    expect(axiomById(54)?.verdict).toBe('SYMBOLIC-ONLY');
+    expect(axiomById(71)?.verdict).toBe('ANCHOR');
     expect(axiomById(73)?.groundedSource).toContain('ZF set theory');
     expect(axiomById(76)?.groundedSource).toContain('Shannon');
   });
