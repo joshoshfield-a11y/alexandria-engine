@@ -2,7 +2,7 @@
  * Worked examples — a deep lens reading, shown step by step.
  *
  * Source: "The Alexandria Codex — Symbolic System Specification" (Document A),
- * §2.2, which demonstrates the 13×72 method by reading one operator through
+ * §2.2, which demonstrates the 13×78 method by reading one operator through
  * three frames. Preserved here as the canonical example of what a full reading
  * looks like, so new users can see the method before running it.
  */

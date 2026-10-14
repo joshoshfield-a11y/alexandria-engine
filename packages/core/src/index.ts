@@ -2,9 +2,9 @@
  * @alexandria/core — the formal core of the Alexandria Engine.
  *
  * A working implementation of the Alexandria Codex as a thinking instrument:
- *  - 72 analytical operators in plain language (data/axioms.ts; original Codex names kept as codexName)
+ *  - 78 analytical operators in plain language (data/axioms.ts; original Codex names kept as codexName)
  *  - 13 analytical frames (data/pillars.ts)
- *  - the 936-lens morphological matrix + reading engine (lenses.ts)
+ *  - the 1014-lens morphological matrix + reading engine (lenses.ts)
  *  - the failure-mode taxonomy as a red-team appendix (data/nocturna.ts, redteam.ts)
  *  - the term algebra: composition, polarity, domains, lens application (algebra.ts)
  *  - the sweep engine: perspective sweeps on any topic (sweep.ts)

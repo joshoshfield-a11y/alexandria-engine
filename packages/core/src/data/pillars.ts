@@ -6,8 +6,8 @@
  * descriptions are rendered here in plain language. Original Codex names are
  * kept as `codexName` for provenance.
  *
- * A frame crossed with the 72 operators yields 72 lenses; 13 frames yield the
- * full 936-lens matrix (see lenses.ts).
+ * A frame crossed with the 78 operators yields 78 lenses; 13 frames yield the
+ * full 1014-lens matrix (see lenses.ts).
  */
 
 export interface PerceptionPillar {

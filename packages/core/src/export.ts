@@ -38,7 +38,7 @@ export function sweepToMarkdown(result: SweepResult, notes?: SessionNotes): stri
   }
   lines.push(`---`, ``, `# Red Team — Failure Modes`, ``);
   for (const s of result.redTeam) {
-    lines.push(`- **${s.shadow.name}** (${s.axiom.glyph} ${s.axiom.name}): ${s.probe}`);
+    lines.push(`- **${s.shadow?.name ?? 'No shadow defined'}** (${s.axiom.glyph} ${s.axiom.name}): ${s.probe}`);
   }
   lines.push(``);
   return lines.join('\n');
@@ -67,7 +67,7 @@ export function spreadToMarkdown(result: SpreadResult, notes?: SessionNotes): st
   }
   lines.push(`---`, ``, `# Red Team — Failure Modes`, ``);
   for (const s of result.redTeam) {
-    lines.push(`- **${s.shadow.name}** (${s.axiom.glyph} ${s.axiom.name}): ${s.probe}`);
+    lines.push(`- **${s.shadow?.name ?? 'No shadow defined'}** (${s.axiom.glyph} ${s.axiom.name}): ${s.probe}`);
   }
   lines.push(``);
   return lines.join('\n');

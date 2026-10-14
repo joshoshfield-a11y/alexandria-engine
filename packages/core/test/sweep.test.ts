@@ -19,11 +19,21 @@ describe('sweep', () => {
     expect(runSweep({ topic: 'x' }).readings).toHaveLength(7);
   });
 
-  it('pillar strategy sweeps all 72 lenses of the pillar', () => {
+  it('pillar strategy sweeps all 78 lenses of the pillar', () => {
     const r = runSweep({ topic: 'the merger', strategy: 'pillar', pillarId: 8 });
-    expect(r.readings).toHaveLength(72);
+    expect(r.readings).toHaveLength(78);
     expect(r.readings.every((x) => x.lens.pillar.id === 8)).toBe(true);
-    expect(r.redTeam).toHaveLength(72);
+    expect(r.redTeam).toHaveLength(78);
+  });
+
+  it('pillar sweep red-team marks extension slots without inventing shadows', () => {
+    const r = runSweep({ topic: 'the merger', strategy: 'pillar', pillarId: 8 });
+    const ext = r.redTeam.filter((x) => x.axiom.id >= 73);
+    expect(ext).toHaveLength(6);
+    for (const x of ext) {
+      expect(x.shadow).toBeNull();
+      expect(x.probe).toContain('No failure-mode mirror is defined');
+    }
   });
 
   it('axiom strategy sweeps all 13 lenses of the axiom', () => {
@@ -34,7 +44,7 @@ describe('sweep', () => {
 
   it('full strategy covers the whole matrix', () => {
     const lenses = planSweep({ topic: 'x', strategy: 'full' });
-    expect(lenses).toHaveLength(936);
+    expect(lenses).toHaveLength(1014);
   });
 
   it('requires pillarId/axiomId for those strategies', () => {
@@ -48,12 +58,23 @@ describe('sweep', () => {
 });
 
 describe('redTeam', () => {
-  it('defaults to all 72 shadows in axiom order', () => {
+  it('defaults to all 78 operators in axiom order', () => {
     const rs = redTeam('the product launch');
-    expect(rs).toHaveLength(72);
+    expect(rs).toHaveLength(78);
     expect(rs[0].axiom.id).toBe(1);
     expect(rs[71].axiom.id).toBe(72);
-    expect(rs[0].shadow.name).toBe('Covert Surveillance');
+    expect(rs[77].axiom.id).toBe(78);
+    expect(rs[0].shadow!.name).toBe('Covert Surveillance');
+  });
+
+  it('extension slots get a null shadow and an explicit marker probe', () => {
+    const rs = redTeam('the product launch', [73, 78]);
+    expect(rs).toHaveLength(2);
+    for (const r of rs) {
+      expect(r.shadow).toBeNull();
+      expect(r.probe).toContain('No failure-mode mirror is defined');
+      expect(r.probe).toContain('the product launch');
+    }
   });
 
   it('accepts a subset of axioms', () => {

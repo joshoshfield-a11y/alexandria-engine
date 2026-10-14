@@ -5,21 +5,22 @@ import {
 } from '../src/lenses.js';
 
 describe('lens matrix', () => {
-  it('allLenses yields exactly 936 unique lenses', () => {
+  it('allLenses yields exactly 1014 unique lenses (13 x 78)', () => {
     const lenses = allLenses();
-    expect(lenses).toHaveLength(936);
+    expect(lenses).toHaveLength(1014);
     const ids = new Set(lenses.map((l) => l.id));
-    expect(ids.size).toBe(936);
+    expect(ids.size).toBe(1014);
   });
 
   it('lensId formats correctly', () => {
     expect(lensId(1, 1)).toBe('P01-A01');
     expect(lensId(13, 72)).toBe('P13-A72');
+    expect(lensId(13, 78)).toBe('P13-A78');
   });
 
-  it('lensesForPillar returns 72 lenses of that pillar', () => {
+  it('lensesForPillar returns 78 lenses of that pillar', () => {
     const lenses = lensesForPillar(1);
-    expect(lenses).toHaveLength(72);
+    expect(lenses).toHaveLength(78);
     expect(lenses.every((l) => l.pillar.id === 1)).toBe(true);
   });
 
@@ -51,7 +52,11 @@ describe('drawSpread', () => {
 
   it('rejects bad counts', () => {
     expect(() => drawSpread(0)).toThrow();
-    expect(() => drawSpread(937)).toThrow();
+    expect(() => drawSpread(1015)).toThrow();
+  });
+
+  it('can draw the whole 1014 matrix', () => {
+    expect(drawSpread(1014, 7)).toHaveLength(1014);
   });
 
   it('mulberry32 is a stable PRNG', () => {
@@ -112,5 +117,24 @@ describe('counterProbe', () => {
   it('falls back gracefully when the art is unrecovered', () => {
     const c = counterProbe(65, 'the launch');
     expect(c.probe).toContain('shadow form');
+  });
+
+  it('marks extension slots 73-78 as having no shadow (no invention)', () => {
+    const c = counterProbe(73, 'the launch');
+    expect(c.name).toBe('No shadow defined');
+    expect(c.probe).toContain('No failure-mode mirror is defined');
+    expect(c.probe).toContain('the launch');
+  });
+
+  it('still throws for unknown axiom ids', () => {
+    expect(() => counterProbe(99, 'the launch')).toThrow();
+  });
+
+  it('reads a lens on an extension-slot operator', () => {
+    const r = readLens(getLens(4, 76), 'the data center');
+    expect(r.lens.id).toBe('P04-A76');
+    expect(r.question).toContain('Channel Capacity');
+    expect(r.shadowName).toBe('No shadow defined');
+    expect(r.counter).toContain('No failure-mode mirror is defined');
   });
 });

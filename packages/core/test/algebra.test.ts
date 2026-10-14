@@ -43,6 +43,11 @@ describe('algebra', () => {
     expect(invertAxiom(axiomById(72)!)?.name).toBe('Terminal Destruction');
   });
 
+  it('invertAxiom returns undefined for extension slots (no invented mirror)', () => {
+    expect(invertAxiom(axiomById(73)!)).toBeUndefined();
+    expect(invertAxiom(axiomById(78)!)).toBeUndefined();
+  });
+
   it('applyLens formats lens application', () => {
     expect(applyLens(3, 27)).toBe('L(P03)(A27)');
   });

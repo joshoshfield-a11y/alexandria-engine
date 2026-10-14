@@ -4,7 +4,7 @@
  * A spread draws N distinct lenses and assigns each a *position* (Root, Force,
  * Outcome...). The position tells the reader what job that lens is doing in
  * the analysis, the way positions do in a tarot spread — except here every
- * position is filled by a computed lens from the 936-matrix, not a card.
+ * position is filled by a computed lens from the 1014-matrix, not a card.
  *
  * Spreads are deterministic for a fixed seed (see drawSpread in lenses.ts).
  */

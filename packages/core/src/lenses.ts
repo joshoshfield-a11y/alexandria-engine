@@ -1,9 +1,11 @@
 /**
- * The 936-lens matrix and the lens reading engine.
+ * The 1014-lens matrix and the lens reading engine.
  *
- * The Codex Speculum: 13 perception pillars × 72 axioms = 936 lenses
+ * The Codex Speculum: 13 perception pillars × 78 operators = 1014 lenses
  * (Document A §2.2, Document B §3.1 — formally a morphological matrix, the
- * same method family as Zwicky morphological analysis and TRIZ).
+ * same method family as Zwicky morphological analysis and TRIZ). The matrix
+ * is generated, not hand-written: it scales automatically with the operator
+ * canon (72 → 78 on 2026-10-14; see data/canon78-note.md).
  *
  * A lens reading composes three things:
  *   1. a pillar *move* (an analytical operation),
@@ -30,7 +32,7 @@ export function lensId(pillarId: number, axiomId: number): string {
   return `P${String(pillarId).padStart(2, '0')}-A${String(axiomId).padStart(2, '0')}`;
 }
 
-/** The full 936-lens matrix. */
+/** The full 1014-lens matrix (13 frames × 78 operators). */
 export function allLenses(): Lens[] {
   const out: Lens[] = [];
   for (const pillar of PERCEPTION_PILLARS) {
@@ -49,7 +51,7 @@ export function getLens(pillarId: number, axiomId: number): Lens {
   return { id: lensId(pillarId, axiomId), pillar, axiom };
 }
 
-/** The 72 lenses of one pillar. */
+/** The 78 lenses of one pillar. */
 export function lensesForPillar(pillarId: number): Lens[] {
   const pillar = pillarById(pillarId);
   if (!pillar) throw new Error(`lensesForPillar: unknown pillar ${pillarId}`);
@@ -82,7 +84,7 @@ export function mulberry32(seed: number): () => number {
 export function drawSpread(count: number, seed?: number): Lens[] {
   const all = allLenses();
   if (count < 1) throw new Error('drawSpread: count must be >= 1');
-  if (count > all.length) throw new Error(`drawSpread: count ${count} exceeds 936 lenses`);
+  if (count > all.length) throw new Error(`drawSpread: count ${count} exceeds ${all.length} lenses`);
   const s = seed ?? Number(new Date().toISOString().slice(0, 10).replace(/-/g, ''));
   const rand = mulberry32(s);
   const pool = [...all];
@@ -114,10 +116,29 @@ export function artNoun(art: string): string | null {
   return t.toLowerCase();
 }
 
-/** Compose the shadow counter-probe for a topic. */
+/**
+ * Compose the shadow counter-probe for a topic.
+ *
+ * The Nocturna taxonomy covers the 72 source operators only. The 2026-10-14
+ * extension slots (73–78) have no defined failure-mode mirror — inventing one
+ * would be fabrication — so they get an explicit "no shadow defined" probe
+ * instead of a throw. Unknown axiom ids still throw.
+ */
 export function counterProbe(axiomId: number, topic: string): { name: string; art: string; probe: string } {
+  const axiom = axiomById(axiomId);
+  if (!axiom) throw new Error(`counterProbe: no axiom ${axiomId}`);
   const shadow = shadowByAxiomId(axiomId);
-  if (!shadow) throw new Error(`counterProbe: no shadow for axiom ${axiomId}`);
+  if (!shadow) {
+    return {
+      name: 'No shadow defined',
+      art: '[no shadow in the Nocturna taxonomy]',
+      probe:
+        `No failure-mode mirror is defined for ${axiom.glyph} ${axiom.name} ` +
+        `(operator ${axiom.id}): the Nocturna taxonomy covers the 72 source ` +
+        `operators, and the extension slots 73–78 have no shadow entries. ` +
+        `Red-team reading skipped for ${topic} on this ground.`,
+    };
+  }
   const noun = artNoun(shadow.art);
   const probe = noun
     ? `Shadow check — ${shadow.name} (${shadow.art}): in ${topic}, where is ${noun} already operating unnoticed, and who benefits from it staying hidden?`

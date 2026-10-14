@@ -2,11 +2,11 @@
  * The sweep engine: run a perspective sweep on a topic.
  *
  * Strategies:
- *  - `spread`  — draw N lenses from the full 936 matrix (seeded; default 7,
+ *  - `spread`  — draw N lenses from the full 1014 matrix (seeded; default 7,
  *                 the classic spread size)
- *  - `pillar`  — all 72 lenses of one perception pillar (pillarId required)
+ *  - `pillar`  — all 78 lenses of one perception pillar (pillarId required)
  *  - `axiom`   — all 13 lenses of one axiom (axiomId required)
- *  - `full`    — the entire 936-lens matrix (returns readings lazily in
+ *  - `full`    — the entire 1014-lens matrix (returns readings lazily in
  *                 batches; prefer the narrower strategies for interactive use)
  *
  * Every sweep also runs the failure-mode red-team over the operators involved.
