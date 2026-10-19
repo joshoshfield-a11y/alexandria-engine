@@ -1,0 +1,17 @@
+{
+  "name": "alexandria-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The Alexandria Engine — a formal, working implementation of the Alexandria Codex as a thinking instrument.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm test --workspace=@alexandria/core",
+    "typecheck": "npm run typecheck --workspace=@alexandria/core"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  }
+}
